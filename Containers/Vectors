@@ -122,6 +122,9 @@ int main() {
 	bdate.shrink_to_fit();
 	cout << bdate.capacity() << endl; // -> output -- 6
 
+	// max_element() - return the maximum value in the vector
+	cout<< *max_element(bdate.begin(), bdate.end())<<endl; -> output -- 38
+
 //----------------------------------------------------------------------------------------------------------------------------
 	//C++ Vector Iterators
 	//Vector iterators are used to point to the memory address of a vector element. In some ways, they act like pointers in C++.
@@ -130,6 +133,7 @@ int main() {
 	cout << *i << endl; // -> output -- 12
 	i = bdate.end() - 1;
 	cout << *i << endl; // -> output --31
+//------------------------------------------------------------------------------------------------------------------------------
 
 
 
