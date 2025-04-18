@@ -1,0 +1,137 @@
+#include<iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+	// Initialization
+
+	// Vectors are sequence containers representing arrays that can change in size.
+
+	//Method1
+	vector<int> bdate = { 1, 13, 23, 27 };  // Initializer list
+	vector<int> bdate1{ 1, 4, 8, 27 };    //Uniform initialization
+
+	//Method2
+	vector<int> bdate2(5, 12);
+
+	for (int i : bdate) {
+		cout << i << " ";   // -> output -- 1 13 23 27
+	}
+	cout << "" << endl;
+	for (int i : bdate1) {
+		cout << i << " ";    // -> output -- 1 4 8 27
+	}
+	cout << "" << endl;
+
+	for (int i : bdate2) {
+		cout << i << " ";    // -> output -- 12 12 12 12 12
+	}
+
+	cout << "" << endl;
+
+//-----------------------------------------------------------------------------------------------------------------------------
+	 //Add Elements to a Vector
+
+	//1) push_back()
+	//Syntax : v.push_back(val);
+	bdate.push_back(31);
+	bdate.push_back(38);
+
+	for (int i : bdate) {
+		cout << i << " ";   // -> output -- 1 13 23 27 31 38
+	}
+	cout << "" << endl;
+	//2) insert()
+
+	//v.insert(pos, val);              // Insert single element 
+	bdate1.insert(bdate1.begin() + 1, 2);
+	for (int i : bdate1) {
+		cout << i << " ";    // -> output -- 1 2 4 8 27
+	}
+	cout << "" << endl;
+
+	//v.insert(pos, n, val);         // Insert multiple copies of an element
+	bdate1.insert(bdate1.begin() + 2, 2, 3);
+	for (int i : bdate1) {
+		cout << i << " ";    // -> output -- 1 2 4 8 27
+	}
+	cout << "" << endl;
+
+	//v.insert(pos, first, last);   // Insert range of elements 
+	bdate1.insert(bdate1.end(), bdate2.begin(), bdate2.end());
+	for (int i : bdate1) {
+		cout << i << " ";    // -> output -- 1 2 3 3 4 8 27 12 12 12 12 12
+	}
+	cout << "" << endl;
+
+	//3) emplace()
+	bdate.emplace(bdate.begin(), 12);
+
+	for (int i : bdate) {
+		cout << i << " ";   // -> output -- 12 1 13 23 27 31 38
+	}
+	cout << "" << endl;
+
+//-----------------------------------------------------------------------------------------------------------------------------
+	//Access Elements of a Vector
+	cout << bdate.at(5) << endl; // -> output -- 31
+	cout << bdate[4] << endl; // -> output -- 27
+
+//----------------------------------------------------------------------------------------------------------------------------
+	//Change Vector Element
+	bdate[4] = 28;
+	cout << bdate[4] << endl; // -> output -- 28
+
+//-----------------------------------------------------------------------------------------------------------------------------
+	//Delete Elements from C++ Vectors
+	bdate.pop_back();
+
+	for (int i : bdate) {
+		cout << i << " ";   // -> output -- 12 1 13 23 28 31
+	}
+	cout << "" << endl;
+
+//-----------------------------------------------------------------------------------------------------------------------------
+	//Other Functions
+	//size()
+	cout << bdate2.size() << endl;  //-> output -- 5
+
+	//clear()
+	bdate2.clear();
+	cout << bdate2.size() << endl; // -> output -- 0
+
+	//front() - reference to the first element
+	cout << bdate.front() << endl;  // -> output -- 12
+	cout << *(bdate.begin()) << endl; // -> output --12
+
+	// back()
+	cout << bdate.back() << endl; // -> output -- 31
+	cout << *(bdate.end()-1) << endl; // ->output -- 31
+
+	//empty() -- returns 1 (true) if the vector is empty
+	cout << bdate.empty() << endl; // -> output -- 0
+	cout << bdate2.empty() << endl; // ->output -- 1
+
+	//capacity() 
+	//Initially the capacity of vector is determined with the intial size, but on adding new elements in vector if the size exceeded current capacity, 
+	//then capacity increase by double of previous capacity.
+	cout << bdate.capacity() << endl; //-> output -- 8
+	cout << bdate2.capacity() << endl; // ->output -- 5
+	//The capacity of vector will not decrease automatically on removing the elements from vector.
+	bdate.shrink_to_fit();
+	cout << bdate.capacity() << endl; // -> output -- 6
+
+//----------------------------------------------------------------------------------------------------------------------------
+	//C++ Vector Iterators
+	//Vector iterators are used to point to the memory address of a vector element. In some ways, they act like pointers in C++.
+	vector<int>::iterator i;
+	i = bdate.begin();
+	cout << *i << endl; // -> output -- 12
+	i = bdate.end() - 1;
+	cout << *i << endl; // -> output --31
+
+
+
+	return 0;
+}
