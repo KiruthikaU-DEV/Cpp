@@ -1,0 +1,30 @@
+A variable is a container (storage area) to hold data.
+To indicate the storage area, each variable should be given a unique name (identifier). 
+
+int age = 14;
+age is a variable of the int data type, and we have assigned an integer value 14 to it.
+
+The value of a variable can be changed, hence the name variable.
+int age = 14;   // age is 14
+age = 17;       // age is 17
+
+
+------------------------------------------------------------------------------------------------------
+
+C++ Constants:
+
+In C++, we can create variables whose value cannot be changed. For that, we use the const keyword. 
+const int pi = 3.14;     // use const keyword to declare the variable as constant.
+pi= 6.45; //error
+
+--------------------------------------------------------------------------------------------------------
+
+
+C++ Literals:
+
+Literals are data,  fundamental elements used to represent fixed values.
+int val = 22;
+cout<< val << endl;
+
+The val variable is first assigned a value 22. This value is a literal of integer type.
+Now further in the program, the value of val may change, but the integer literal 22 will always represent the natural number 22 no matter where it is used.
