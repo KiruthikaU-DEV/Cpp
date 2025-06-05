@@ -1,0 +1,19 @@
+Keywords are predefined words that have special meanings to the compiler.
+Identifiers are the unique names given to variables, classes, functions, or other entities by the programmer. 
+
+Ex: int age;
+int is a keyword and age is a Identifiers
+
+* All keywords must be written in lowercase.
+
+Rules for naming identifiers:
+-> Identifiers can be composed of letters, digits, and the underscore character.
+-> It has no limit on name length.
+-> It must begin with either a letter or an underscore.
+-> It is case-sensitive.
+-> We cannot use keywords as identifiers.
+
+Invalid Identifier:
+Total points -> has space in between
+1list        -> starts with number
+float        -> float is a keyword and cannot be used as a identifier
