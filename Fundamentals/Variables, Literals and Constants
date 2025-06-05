@@ -28,3 +28,24 @@ cout<< val << endl;
 
 The val variable is first assigned a value 22. This value is a literal of integer type.
 Now further in the program, the value of val may change, but the integer literal 22 will always represent the natural number 22 no matter where it is used.
+
+Type of Literals:
+1. Integer
+Integer literals in C++ are values that represent whole numbers without the fractional or decimal part.They can be positive or negative and can have different 
+bases such as decimal, octal, or hexadecimal.
+
+// Decimal Literal (No Prefix)
+int dec = 42;        // The decimal literal represents an integer in base 10 without any prefix.
+// Octal Literal (Prefix: 0)
+int oct = 052;       // The octal literal represents an integer in base 8 and is preceded by the 0 prefix.
+//Hexadecimal Literal (Prefix: 0x or 0X)
+int hex= 0x2A;       // The hexadecimal literal represents an integer in the base 16 and is preceded by either 0x or 0X prefix.
+//Binary Literal (Prefix: 0b or 0B)
+int bin= 0b101010;   // The binary literal represents an integer in the base 2 and can have a suffix of 0b or 0B.
+//Long Integer Literal (Suffix: l or L)
+long int lint= 42L;  // The long integer literal can be suffixed with the l or L to indicate that it is of type long int.
+//Unsigned Integer Literal (Suffix: u or U)
+unsigned int uint= 42U;   // The long long integer literal can be suffixed with the ll or LL to indicate that it is of type long long int.
+
+
+
